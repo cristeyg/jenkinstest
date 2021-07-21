@@ -23,6 +23,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('sonarqube') {
+def scannerHome = tool name: 'sonar_scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
                 timeout(time: 10, unit: 'MINUTES') {
