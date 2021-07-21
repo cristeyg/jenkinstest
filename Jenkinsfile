@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Sonarqube') {
             steps {
-                sonar-scanner \
+                sonar-scanner 
                   -Dsonar.projectKey=Prueba 
                   -Dsonar.sources=Jenkinsfile 
                   -Dsonar.host.url=http:"//ec2-18-222-163-216.us-east-2.compute.amazonaws.com:9000" 
