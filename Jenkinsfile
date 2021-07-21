@@ -16,6 +16,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
+        }
         stage('Sonarqube') {
             environment {
               scannerHome = tool 'sonar'
@@ -28,7 +29,6 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }
         }
     }
 }
